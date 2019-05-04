@@ -7,7 +7,11 @@ class GoogleMapReact extends Component {
   }
 
   render() {
-    return <div>Hello World</div>
+    return(
+      <div className="map-container">
+        <div>Hello World</div>
+      </div>
+    )
   }
 }
 
