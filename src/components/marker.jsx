@@ -6,7 +6,9 @@ class Marker extends Component {
   }
 
   render() {
-    return <div>Hello World</div>
+    return (
+      <div className="marker"></div>
+    )
   }
 }
 
