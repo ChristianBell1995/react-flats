@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Flat extends Component {
   handleClick = (event) => {
-    this.props.updateMarker(event.target.id)
+    this.props.updateMarker(this.props.id)
   }
 
   render() {

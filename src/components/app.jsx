@@ -8,23 +8,26 @@ class App extends Component {
     super(props)
     this.flats = FlatData
 
-    this.state {
-      lat:
-      lng:
+    this.state = {
+      lat: 59.95,
+      lng: 30.33
     }
   }
 
   updateMarker = (id) => {
     console.log(id)
+    debugger;
     // take the id of the flat from the flat list and then look for the lat and lng in 'this.flats'
     // then pass the lat and lng into the map component to update the lat and lng of the marker.
+    this.setState({lat: this.lat, lng: this.lng})
+    console.log(this.state.lat)
   }
 
   render() {
     return(
       <div>
         <FlatList flats={this.flats} updateMarker={this.updateMarker} />
-        <MapComponent />
+        <MapComponent lat={this.state.lat} lng={this.state.lng} />
       </div>
     )
   }

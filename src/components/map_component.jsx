@@ -5,13 +5,19 @@ import GoogleMapReact from 'google-map-react';
 // const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 class MapComponent extends Component {
-  static defaultProps = {
-    center: {
-      lat: 59.95,
-      lng: 30.33
-    },
-    zoom: 11
-  };
+  constructor(props) {
+    super(props)
+    this.state = {
+      center: {
+        lat: this.props.lat,
+        lng: this.props.lng
+      }
+    }
+  }
+
+  updateCoordinates = () => {
+    this.props.center.lat = this.props.lat
+  }
 
   render() {
     return(
@@ -19,12 +25,12 @@ class MapComponent extends Component {
         <div style={{ height: '100vh', width: '100%' }}>
           <GoogleMapReact
             bootstrapURLKeys={{ key: ''}}
-            defaultCenter={this.props.center}
-            defaultZoom={this.props.zoom}
+            defaultCenter={this.state.center}
+            defaultZoom={11}
           >
             <Marker
-              lat={59.955413}
-              lng={30.337844}
+              lat={this.props.lat}
+              lng={this.props.lng}
               text="My Marker"
             />
           </GoogleMapReact>

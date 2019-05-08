@@ -3,12 +3,14 @@ import Flat from './flat.jsx'
 
 class FlatList extends Component {
   renderFlats = () => {
-    return this.props.flats.map(({id, name, imageUrl, price, priceCurrency}) =>
+    return this.props.flats.map(({id, name, imageUrl, price, priceCurrency, lat, lng}) =>
       <Flat key={id}
             id={id}
             name={name}
             imageUrl={imageUrl}
             price={price}
+            lat={lat}
+            lng={lng}
             priceCurrency={priceCurrency}
             updateMarker={this.props.updateMarker} />
     )
